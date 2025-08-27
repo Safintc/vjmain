@@ -80,12 +80,7 @@ if 'DYNO' in environ:
     ON_HEROKU = True
 else:
     ON_HEROKU = False
-FQDN=str(getenv{'FQDN',BIND ADRESS)) if not ON_HEROKU or getenv('FQDN') 
-HAS_SSL=bool(getenv('HAS_SSL',False))
-if HAS_SSL:
-    URL=https://vjmain.onrender.com
-else:
-    URL=https://vjmain.onrender.com
+URL = environ.get("URL", "https://vjmain.onrender.com")
 
 
 # Don't Remove Credit Tg - @VJ_Botz
